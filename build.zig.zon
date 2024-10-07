@@ -5,8 +5,8 @@
 
     .dependencies = .{
         .capstone = .{
-            .url = "https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.1.tar.gz",
-            .hash = "12203db27899cf191689d4c4a37497e0bfb5e9e185ac8bb968792c5d138d64a75119",
+            .url = "https://github.com/capstone-engine/capstone/archive/refs/tags/6.0.0-Alpha1.tar.gz",
+            .hash = "12206e06a78a6a61890305d1d25924a115e9d6ca68cff9fa0a7d47baac91ae608f68",
         },
     },
 

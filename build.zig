@@ -241,7 +241,9 @@ pub const SupportedArchitecture = enum {
     fn sources(self: SupportedArchitecture) []const []const u8 {
         return switch (self) {
             .arm => &.{
+                "ARMBaseInfo.c",
                 "ARMDisassembler.c",
+                "ARMDisassemblerExtension.c",
                 "ARMInstPrinter.c",
                 "ARMMapping.c",
                 "ARMModule.c",
@@ -249,6 +251,7 @@ pub const SupportedArchitecture = enum {
             .aarch64 => &.{
                 "AArch64BaseInfo.c",
                 "AArch64Disassembler.c",
+                "AArch64DisassemblerExtension.c",
                 "AArch64InstPrinter.c",
                 "AArch64Mapping.c",
                 "AArch64Module.c",
@@ -378,7 +381,7 @@ pub const SupportedArchitecture = enum {
                 "test_arm.c",
             },
             .aarch64 => &.{
-                "test_arm64.c",
+                "test_aarch64.c",
             },
             .mips => &.{
                 "test_mips.c",
@@ -448,6 +451,7 @@ const common_sources: []const []const u8 = &.{
     "Mapping.c",
     "MCInst.c",
     "MCInstrDesc.c",
+    "MCInstPrinter.c",
     "MCRegisterInfo.c",
     "SStream.c",
     "utils.c",
@@ -456,9 +460,12 @@ const common_sources: []const []const u8 = &.{
 const cstool_sources: []const []const u8 = &.{
     "cstool.c",
     "cstool_arm.c",
-    "cstool_arm64.c",
+    "cstool_aarch64.c",
+    "cstool_alpha.c",
     "cstool_bpf.c",
     "cstool_evm.c",
+    "cstool_hppa.c",
+    "cstool_loongarch.c",
     "cstool_m680x.c",
     "cstool_m68k.c",
     "cstool_mips.c",
@@ -473,6 +480,7 @@ const cstool_sources: []const []const u8 = &.{
     "cstool_wasm.c",
     "cstool_x86.c",
     "cstool_xcore.c",
+    "cstool_xtensa.c",
 };
 
 const test_sources: []const []const u8 = &.{
